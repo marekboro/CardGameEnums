@@ -45,7 +45,7 @@ public class GameTest {
     public void gameCanProgressThroughRound(){
         game.setupGame();
         game.runRound();
-        assertEquals(1,game.getGameRound());
+        assertEquals(2,game.getGameRound());
         assertEquals("",game.getWinner());
     }
     @Test

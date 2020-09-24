@@ -18,5 +18,12 @@ public class Card {
     public Suit getSuit(){
         return this.suit;
     }
-    
+
+    public void setFace(Face face) {
+        this.face = face;
+    }
+
+    public void setSuit(Suit suit) {
+        this.suit = suit;
+    }
 }

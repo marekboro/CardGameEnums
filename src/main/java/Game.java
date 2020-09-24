@@ -7,26 +7,81 @@ public class Game {
     private int maxRounds;
     private String winner;
 
-    public Game(Dealer dealer, Player player1, Player player2, int gameState, int gameRound) {
+    public Game(Dealer dealer, Player player1, Player player2) {
         this.dealer = dealer;
         this.player1 = player1;
         this.player2 = player2;
-        this.gameState = gameState;
-        this.gameRound = gameRound;
+        this.gameState = 0;
+        this.gameRound = 0;
         this.maxRounds = 6;
         this.winner = "";
     }
 
     public void setupGame(){
-        player1.setName("John Rambo");
-        player2.setName("John Matrix");
-        dealer.setName("John McClain");
+//        player1.setName("John Rambo");
+//        player2.setName("John Matrix");
+//        dealer.setName("John McClain");
         Deck deck = new Deck();
         deck.createDeck();
-        deck.shuffleDeck();
+        dealer.setDeck(deck);
+        dealer.shuffleDeck();
     }
 
+    public Dealer getDealer() {
+        return dealer;
+    }
 
+    public void setDealer(Dealer dealer) {
+        this.dealer = dealer;
+    }
+
+    public Player getPlayer1() {
+        return player1;
+    }
+
+    public void setPlayer1(Player player1) {
+        this.player1 = player1;
+    }
+
+    public Player getPlayer2() {
+        return player2;
+    }
+
+    public void setPlayer2(Player player2) {
+        this.player2 = player2;
+    }
+
+    public int getGameState() {
+        return gameState;
+    }
+
+    public void setGameState(int gameState) {
+        this.gameState = gameState;
+    }
+
+    public int getGameRound() {
+        return gameRound;
+    }
+
+    public void setGameRound(int gameRound) {
+        this.gameRound = gameRound;
+    }
+
+    public int getMaxRounds() {
+        return maxRounds;
+    }
+
+    public void setMaxRounds(int maxRounds) {
+        this.maxRounds = maxRounds;
+    }
+
+    public String getWinner() {
+        return winner;
+    }
+
+    public void setWinner(String winner) {
+        this.winner = winner;
+    }
 
     public void runRound(){
         dealer.issueCard(player1);
@@ -41,6 +96,8 @@ public class Game {
             player2.setScore(oldScore +1);
         }
         gameRound +=1;
+        player1.setCard(null);
+        player2.setCard(null);
     }
 
     public void runGame(){

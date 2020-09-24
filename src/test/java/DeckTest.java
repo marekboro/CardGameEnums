@@ -41,14 +41,14 @@ public class DeckTest {
     @Test
     public void canRandomiseDeck(){
         deck.createDeck();
-        assertEquals("142345678910", deck.stringOfIntsfromfirst5Cards());
+        assertEquals("142345678910", deck.stringOfIntsfromfirst10Cards());
         Card freshCard1 = deck.getCards().get(0);
         Card freshCard2 = deck.getCards().get(1);
         assertEquals(freshCard1,deck.getCards().get(0));
         assertEquals(freshCard2,deck.getCards().get(1));
         deck.shuffleDeck();
         assertEquals(52,deck.getCards().size());
-        assertNotEquals("142345678910", deck.stringOfIntsfromfirst5Cards());
+        assertNotEquals("142345678910", deck.stringOfIntsfromfirst10Cards());
     }
 
 

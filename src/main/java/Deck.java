@@ -35,7 +35,7 @@ public class Deck {
         return cardToReturn;
     }
 
-    public String stringOfIntsfromfirst5Cards() {
+    public String stringOfIntsfromfirst10Cards() {
         String code = "";
         for (int i = 0; i < 10; i++) {
             code += cards.get(i).getFace().getValue();

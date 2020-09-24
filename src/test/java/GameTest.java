@@ -16,7 +16,10 @@ public class GameTest {
         player1 = new Player("John Rambo");
         player2 = new Player("John Matrix");
         dealer = new Dealer("John Wick");
-        game = new Game(dealer,player1,player2);
+        game = new Game();
+        game.setDealer(dealer);
+        game.setPlayer1(player1);
+        game.setPlayer2(player2);
     }
 //    @Test
 //    public void gameSetupWillAddAShuffledDeck(){
